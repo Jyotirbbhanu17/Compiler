@@ -1,35 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Universal Compiler</title>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeSphere - Multi-language Compiler</title>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  
+
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Monaco Editor CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>🌍 Universal Compiler</h1>
-
-    <div class="controls">
-      <label for="language">Select Language:</label>
-      <select id="language">
-        <option value="python">Python</option>
-        <option value="java">Java</option>
-        <option value="cpp">C++</option>
-      </select>
-      <button id="run-btn">▶ Run</button>
+  <div class="app">
+    <div class="app-header">
+      <div class="title">
+        <h1>CodeSphere 🌐</h1>
+        <p>Multi-language Online Compiler</p>
+      </div>
+      <div class="header-actions">
+        <select id="language" class="select">
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+          <option value="cpp">C++</option>
+          <option value="c">C</option>
+          <option value="javascript">JavaScript</option>
+          <option value="ruby">Ruby</option>
+          <option value="go">Go</option>
+          <option value="php">PHP</option>
+        </select>
+        <button id="run-btn" class="btn">▶ Run</button>
+        <button id="theme-toggle" class="toggle">Dark Mode</button>
+      </div>
     </div>
 
-    <textarea id="code" placeholder="Write your code here..."></textarea>
+    <div class="grid">
+      <div class="panel">
+        <div id="editor"></div>
+        <div class="editor-footer">
+          <button id="save-btn" class="small-btn">Save</button>
+          <button id="clear-btn" class="small-btn">Clear</button>
+          <span id="autosave-state">On</span>
+        </div>
+      </div>
 
-    <div class="output-section">
-      <h3>Output:</h3>
-      <pre id="output">Your output will appear here...</pre>
+      <div class="right-col">
+        <div class="output-card">
+          <div class="output-title">
+            <h3>Output</h3>
+            <div id="run-status"></div>
+          </div>
+          <pre id="output">Your output will appear here...</pre>
+          <div class="loader hidden" id="loader"></div>
+        </div>
+
+        <div class="output-card">
+          <div class="output-title">
+            <h4>History</h4>
+            <button id="clear-history" class="small-btn">Clear</button>
+          </div>
+          <div id="history" class="history"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -37,3 +72,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
