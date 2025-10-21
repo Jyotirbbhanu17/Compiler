@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universal Compiler</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 Universal Compiler</h1>
+
+    <div class="controls">
+      <label for="language">Select Language:</label>
+      <select id="language">
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="cpp">C++</option>
+      </select>
+      <button id="run-btn">▶ Run</button>
+    </div>
+
+    <textarea id="code" placeholder="Write your code here..."></textarea>
+
+    <div class="output-section">
+      <h3>Output:</h3>
+      <pre id="output">Your output will appear here...</pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
