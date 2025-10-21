@@ -1,0 +1,12 @@
+mini-java-compiler/
+│
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│
+└── frontend/
+    ├── package.json
+    ├── src/
+        ├── App.js
+        ├── components/CodeEditor.js
+        ├── index.js
